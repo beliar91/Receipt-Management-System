@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="4127835268">
+    <data-source source="LOCAL" name="Rails Praca_inz: test" uuid="2095cd9f-7563-4512-8087-c2022aeeed92">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:Praca_inz_test</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails Praca_inz: development" uuid="04fb86e2-29b2-4cdd-b36d-485a9b97c5e5">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:Praca_inz_dev</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails Praca_inz: production" uuid="2bcb7862-96f0-4100-8408-473a2ef81737">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:Praca_inz_prod</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>

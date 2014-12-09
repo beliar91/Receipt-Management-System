@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<% if @receipt.file.present? %>
+<p><strong>Zdjęcie paragonu:</strong>
+  <%= image_tag @receipt.file.url(:medium) %>
+</p>
+<% end %>
+
+<p>
+  <strong>Data zakupów:</strong>
+  <%= I18n.localize(@receipt.shopping_date)%>
+</p>
+
+<p>
+  <strong>Artykuł:</strong>
+  <%= @receipt.article %>
+</p>
+
+<p>
+  <strong>Marka:</strong>
+  <%= @receipt.brand %>
+</p>
+
+<p>
+  <strong>Sklep:</strong>
+  <%= @receipt.shop.name %>
+</p>
+
+<% if admin? %>
+<%= link_to 'Edytuj', edit_receipt_path(@receipt) %> |
+<% end %>
+<%= link_to 'Powrót', receipts_path %>

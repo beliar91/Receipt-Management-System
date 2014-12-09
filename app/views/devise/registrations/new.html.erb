@@ -1,0 +1,23 @@
+<h2>Zarejestruj się</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :hasło, autocomplete: "off", label: "Hasło (musi posiadać co najmniej 8 znaków)" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :potwierdzenie_hasła, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Zarejestruj się" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

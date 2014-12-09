@@ -1,0 +1,75 @@
+<%= form_for @receipt, :html => { :multipart => true } do |f| %>
+  <% if @receipt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shop.errors.count, "error") %> prohibited this receipt from being saved:</h2>
+
+      <ul>
+      <% @receipt.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <div class="large-12 columns">
+        <div class="small-9 columns">
+          <%= f.file_field :file, label: "Zdjęcie paragonu (nie może zajmować więcej niż 10MB)" %>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="large-12 columns">
+        <div class="small-9 columns">
+          <%= f.text_field :shopping_date, label:"Data zakupów" %>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="large-12 columns">
+        <div class="small-9 columns">
+          <%= f.label :article do %>
+              Artykuł
+              <span data-tooltip class="has-tip tip-left" title="Here are my tooltip contents!">?</span>
+          <% end %>
+          <%= f.text_field :article, label:false %>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="large-12 columns">
+        <div class="small-9 columns">
+          <%= f.label :brand do %>
+              Marka
+              <span data-tooltip class="has-tip tip-left" title="Here are my tooltip contents!">?</span>
+          <% end %>
+          <%= f.text_field :brand, label:false %>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="field">
+      <div class="large-12 columns">
+        <div class="small-9 columns">
+          <%=  f.collection_select :shop_id, Shop.all, :id, :name_with_city, :prompt => "Wybierz sklep", label: "Sklep(Nazwa: Miejscowość)"  %>
+        </div>
+      </div>
+    </div>
+
+
+  <div class="actions">
+    <div class="large-12 columns">
+      <div class="small-9 columns">
+        <%= f.submit "Utwórz Paragon" %>
+      </div>
+    </div>
+  </div>
+
+
+<% end %>

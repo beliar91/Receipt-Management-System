@@ -1,0 +1,23 @@
+pl:
+  date:
+    formats:
+      default: "%d %B %Y"
+      short: "%b %d"
+      long: "%B %d, %Y"
+    day_names: [Niedziela, Poniedziałek, Wtorek, Środa, Czwartek, Piątek, Sobota]
+    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
+# Don't forget the nil at the beginning; there's no such thing as a 0th month
+    month_names: [~, Styczeń, Luty, Marzec, Kwiecień, Maj, Czerwiec, Lipiec, Sierpień, Wrzesień, Październik, Listopad, Grudzień]
+    abbr_month_names: [~, Sty, Lut, Marz, Kw, Ma, Czw, Lip, Sier, Wrz, Paźdz, List, Grudź]
+# Used in date_select and datetime_select.
+    order:
+    - year
+    - month
+    - day
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+      am: "am"
+      pm: "pm"

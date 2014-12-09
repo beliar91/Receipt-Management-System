@@ -1,0 +1,57 @@
+
+
+<div class="row">
+
+  <div class="small 2" >
+    <h1 class="text-center">System Zarządzania paragonami</h1>
+  </div>
+
+  <div class="large-6 columns">
+    <h2>Zaloguj się</h2>
+    <%= form_for(:user, :url => session_path(:user)) do |f| %>
+        <%= f.text_field :email %>
+        <%= f.password_field :password, label: "Hasło" %>
+        <%= f.check_box :remember_me, label: "Zapamiętaj mnie" %>
+        <%= f.submit 'Zaloguj się' %>
+        <%= link_to "Zapomniałeś hasła?", new_password_path(:user) %>
+    <% end %>
+  </div>
+  <div class="large-6 columns">
+    <h2>Zarejestruj się</h2>
+
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div><%= f.email_field :email %></div>
+
+        <div><%= f.password_field :password, label: "Hasło (musi zawierać co najmniej 8 znaków)" %></div>
+
+        <div><%= f.password_field :password_confirmation, label: "Potwierdzenie hasła" %></div>
+
+        <div><%= f.submit "Zarejestruj się" %></div>
+    <% end %>
+
+  </div>
+  </div>
+
+
+
+<footer class="row">
+  <div class="large-12 columns">
+    <hr/>
+    <div class="row">
+      <div class="large-6 columns">
+        <p>© Copyright to System Zarządzania Paragonami 2015.</p>
+      </div>
+      <div class="large-6 columns">
+        <ul class="inline-list right">
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+  

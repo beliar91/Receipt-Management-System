@@ -1,0 +1,41 @@
+<h1>Sklepy</h1>
+
+<%= form_tag shops_path, :method => :get do %>
+    <p>
+      <%= text_field_tag :query, params[:query] %>
+      <%= submit_tag "Szukaj", :name => nil, class: "button small success" %>
+    </p>
+<% end %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Nazwa</th>
+      <th>Ulica</th>
+      <th>Miasto</th>
+      <th>Email</th>
+      <th>Telefon</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @shops.each do |shop| %>
+      <tr>
+        <td><%= shop.name %></td>
+        <td><%= shop.street %></td>
+        <td><%= shop.city %></td>
+        <td><%= shop.email %></td>
+        <td><%= shop.telephone %></td>
+        <td><%= link_to 'Szczegóły', shop, class: "button small success" %></td>
+        <td><%= link_to 'Edytuj', edit_shop_path(shop), class: "button small" %></td>
+        <td><%= link_to 'Usuń', shop, method: :delete, data: { confirm: 'Are you sure?' }, class: "button small alert" %></td>
+        <% end %>
+      </tr>
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'Nowy sklep', new_shop_path, class: "button" %>
