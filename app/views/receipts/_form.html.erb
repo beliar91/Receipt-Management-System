@@ -29,15 +29,20 @@
       </div>
     </div>
 
-
+    <div class="large-12 columns">
+    <p>Dodaj artykuły znajdujące się na paragonie:</p>
+    </div>
 
     <div class="field">
       <div class="large-12 columns">
+
+
       <%= f.fields_for :articles do |builder| %>
             <div class="article_fields">
         <%= render "article_fields", :f => builder %>
             </div>
             <% end %>
+
       </div>
     </div>
 
