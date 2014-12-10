@@ -4,3 +4,7 @@
 jQuery ->
   $('#receipt_shopping_date').datepicker(dateFormat: 'yy-mm-dd')
   $.datepicker.setDefaults($.datepicker.regional['PL']);
+  $('form').on 'click', '.remove_fields', (event) ->
+    $(this).prev('input[type=hidden]').val('1')
+    $(this).closest('fieldset').hide()
+    event.preventDefault()

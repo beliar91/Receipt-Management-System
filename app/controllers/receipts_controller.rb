@@ -12,7 +12,7 @@ class ReceiptsController < ApplicationController
       return true
     end
     if user_id != @receipt.user_id
-      flash[:error] = "Przykro mi, nie mozesz edytowac tego paragonu"
+      flash[:error] = "Przykro mi, nie masz uprawnien do tego paragonu."
       redirect_to receipts_path
     end
   end
@@ -28,6 +28,9 @@ class ReceiptsController < ApplicationController
 
   def new
     @receipt = Receipt.new
+    2.times do
+      @receipt.articles.build
+    end
     respond_with(@receipt)
   end
 
@@ -52,12 +55,6 @@ class ReceiptsController < ApplicationController
     respond_with(@receipt)
   end
 
-  def destroy_file
-    @receipt.file = nil
-    p '321321321'
-    @receipt.save
-  end
-
   private
 
   def set_shop
@@ -65,7 +62,7 @@ class ReceiptsController < ApplicationController
   end
 
   def receipt_params
-    params.require(:receipt).permit(:shopping_date, :article, :brand, :shop_id, :file)
+    params.require(:receipt).permit(:shopping_date, :shop_id, :file, articles_attributes: [ :id, :name, :brand, :warranty_time, :receipt_id, :_destroy ])
   end
 
 

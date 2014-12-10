@@ -29,27 +29,15 @@
       </div>
     </div>
 
-    <div class="field">
-      <div class="large-12 columns">
-        <div class="small-9 columns">
-          <%= f.label :article do %>
-              Artykuł
-              <span data-tooltip class="has-tip tip-left" title="Here are my tooltip contents!">?</span>
-          <% end %>
-          <%= f.text_field :article, label:false %>
-        </div>
-      </div>
-    </div>
+
 
     <div class="field">
       <div class="large-12 columns">
-        <div class="small-9 columns">
-          <%= f.label :brand do %>
-              Marka
-              <span data-tooltip class="has-tip tip-left" title="Here are my tooltip contents!">?</span>
-          <% end %>
-          <%= f.text_field :brand, label:false %>
-        </div>
+      <%= f.fields_for :articles do |builder| %>
+            <div class="article_fields">
+        <%= render "article_fields", :f => builder %>
+            </div>
+            <% end %>
       </div>
     </div>
 

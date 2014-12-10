@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   resources :shops
 
-  resources :receipts
+  resources :receipts do
+    resources :articles
+  end
 
   devise_for :users
 
