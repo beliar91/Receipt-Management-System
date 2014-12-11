@@ -41,6 +41,11 @@ gem 'tire'
 #zalaczniki tekstowe:
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
+#panel administracyjny
+
+gem 'activeadmin', github: 'activeadmin'
+
+
 gem 'dynamic_form'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

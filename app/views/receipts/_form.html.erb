@@ -13,19 +13,16 @@
 
     <div class="field">
       <div class="large-12 columns">
-        <div class="small-9 columns">
-          <%= f.file_field :file, label: "Zdjęcie paragonu (nie może zajmować więcej niż 10MB)" %>
-        </div>
+
+        <%= f.file_field :file, label: "Zdjęcie paragonu (nie może zajmować więcej niż 10MB)" %>
+
 
       </div>
     </div>
 
     <div class="field">
       <div class="large-12 columns">
-        <div class="small-9 columns">
-          <%= f.text_field :shopping_date, label:"Data zakupów" %>
-        </div>
-
+          <%= f.text_field :shopping_date, label:"Data zakupów", "size" => 150 %>
       </div>
     </div>
 
@@ -42,27 +39,23 @@
         <%= render "article_fields", :f => builder %>
             </div>
             <% end %>
-        <div class="large-12 columns">
-        <%= link_to_add_fields "Add article", f, :articles %>
-          </div>
+
+        <%= link_to_add_fields "Dodaj kolejny artykuł", f, :articles %>
+
       </div>
     </div>
 
 
     <div class="field">
       <div class="large-12 columns">
-        <div class="small-9 columns">
           <%=  f.collection_select :shop_id, Shop.all, :id, :name_with_city, :prompt => "Wybierz sklep", label: "Sklep(Nazwa: Miejscowość)"  %>
-        </div>
       </div>
     </div>
 
 
   <div class="actions">
     <div class="large-12 columns">
-      <div class="small-9 columns">
         <%= f.submit "Utwórz Paragon" %>
-      </div>
     </div>
   </div>
 

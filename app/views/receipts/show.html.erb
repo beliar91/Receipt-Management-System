@@ -1,19 +1,37 @@
 <p id="notice"><%= notice %></p>
 
+<h3>Przeglądanie paragonu</h3>
+
 <% if @receipt.file.present? %>
 <p><strong>Zdjęcie paragonu:</strong>
   <%= image_tag @receipt.file.url(:medium) %>
 </p>
 <% end %>
 
-<p>
-  <strong>Data zakupów:</strong>
+<p >
+  <strong>Data zakupów</strong>
   <%= I18n.localize(@receipt.shopping_date)%>
 </p>
 
+<p >
+  <strong>Liczba artykułów:</strong>
+  <%= @receipt.articles.count %>
+</p>
+
+<p >
+  <strong>Artykuły znajdujące się na paragonie:</strong>
+  <% @receipt.articles.each_with_index do |article, index| %>
+      <li><%= (index+1).to_s + ") " %><%= article.name_with_brand %></li>
+  <% end %>
+   </p>
+
 <p>
-  <strong>Sklep:</strong>
-  <%= @receipt.shop.name %>
+  <strong>Kupiono w sklepie:</strong>
+  <%= link_to @receipt.shop.name, @receipt.shop %>
+</p>
+<p>
+  <strong>Kupiono w mieście:</strong>
+  <%= @receipt.shop.city %>
 </p>
 
 <% if admin? %>

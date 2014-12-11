@@ -7,6 +7,7 @@
       <th>Zdjęcie paragonu</th>
       <th>Data zakupów</th>
       <th>Sklep</th>
+      <th>Liczba artykułów</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,11 +15,12 @@
   <tbody>
     <% @receipts.each do |receipt| %>
       <tr>
-        <td> <% if receipt.file.present?%> <%= image_tag receipt.file.url(:small) %></td>
+        <td class="text-center"> <% if receipt.file.present?%> <%= image_tag receipt.file.url(:small) %></td>
             <% else %><%= "brak" %>
         <%end%>
-        <td><%= I18n.localize(receipt.shopping_date) %></td>
-        <td><%= receipt.shop.name %></td>
+        <td class="text-center"><%= I18n.localize(receipt.shopping_date) %></td>
+        <td class="text-center"><%= link_to receipt.shop.name, receipt.shop  %></td>
+        <td class="text-center"><%= receipt.articles.count%></td>
         <td><%= link_to 'Szczegóły', receipt, class: "button small success" %></td>
         <td><%= link_to 'Edytuj', edit_receipt_path(receipt), class: "button small" %></td>
         <td><%= link_to 'Usuń', receipt, method: :delete, data: { confirm: 'Jesteś pewien?' }, class: "button small alert"   %></td>
