@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  ActiveAdmin.routes(self)
   get 'shop_searches/new'
 
   get 'shop_searches/show'

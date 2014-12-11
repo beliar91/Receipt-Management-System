@@ -25,7 +25,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 #datepicker+jquery
 gem "jquery-rails", "~> 2.0.1"
-gem 'jquery-ui-rails', '~> 4.2.1'
+gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
 
 #css+front-end framework
