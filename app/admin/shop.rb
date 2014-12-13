@@ -4,6 +4,19 @@ ActiveAdmin.register Shop, as: "Sklep" do
 
   index :title => 'Sklepy' do
 
+    column "Nazwa", :name do |shop|
+    link_to shop.name, admin_sklep_path(shop)
+    end
+
+    column "Ulica", :street
+    column "Miasto", :city
+    column :email
+    column "Telefon", :telephone
+    column "Utworzono", :created_at
+    column "Zaktualizowano", :updated_at
+    column "Szerokość geogr.", :latitude
+    column "Długość geogr", :longitude
+
   end
 
 
