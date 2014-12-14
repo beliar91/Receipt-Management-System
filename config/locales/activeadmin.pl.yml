@@ -1,0 +1,11 @@
+#encoding: utf-8
+pl:
+  formtastic:
+    :yes: 'Tak'
+    :no: 'Nie'
+    :create: 'Utwórz %{model}'
+    :update: 'Zaktualizuj %{model}'
+    :submit: 'Potwierdź %{model}'
+    :cancel: 'Anuluj %{model}'
+    :reset: 'Resetuj %{model}'
+    :required: 'wymagany'

@@ -1,4 +1,22 @@
 pl:
+  activerecord:
+    models:
+      shop:
+        one: Sklep
+        other: Sklepy
+      receipt:
+        one: Paragon
+        other: Paragony
+    attributes:
+      shop:
+        name: Nazwa
+        street: Ulica
+        city: Miasto
+        telephone: Telefon
+        latitude: Szerokosc geogr.
+        longitude: Dlugosc geogr.
+        created_at: Utworzono
+        updated_at: Zaktualizowano
   date:
     formats:
       default: "%d %B %Y"
