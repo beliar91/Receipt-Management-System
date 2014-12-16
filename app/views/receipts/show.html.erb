@@ -32,7 +32,7 @@
 <p >
   <strong>Artykuły znajdujące się na paragonie:</strong>
   <% @receipt.articles.each_with_index do |article, index| %>
-      <li><%= (index+1).to_s + ") " %><%= article.name_with_brand %></li>
+      <li><%= (index+1).to_s + ") " %><%= article.name_with_brand %> <%= "- gwarancja wygasa: " %> <strong><%= I18n.localize(article.warranty_expires)  %></strong></li>
   <% end %>
    </p>
 

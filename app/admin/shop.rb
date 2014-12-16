@@ -5,11 +5,6 @@ ActiveAdmin.register Shop do
 
   permit_params :name, :street, :city, :email, :telephone, :latitude, :longitude, :user_id, :user_email
 
-  batch_action :shop do |selection|
-    Shop.find(selection).each { |p| p.flag! }
-    redirect_to collection_path, :notice => "Shops flagged!"
-  end
-
 
   index :title => 'Sklepy' do
     selectable_column

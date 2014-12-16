@@ -27,7 +27,6 @@ class Shop < ActiveRecord::Base
     "#{name}: #{city}"
   end
 
-
   end
 
 

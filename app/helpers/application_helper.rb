@@ -27,4 +27,5 @@ module ApplicationHelper
     link_to(name, '#', class: "add_fields small button success", data: {id: id, fields: fields.gsub("\n", "")})
   end
 
+
 end

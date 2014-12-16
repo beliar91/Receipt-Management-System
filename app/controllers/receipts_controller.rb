@@ -42,6 +42,13 @@ class ReceiptsController < ApplicationController
   def create
     @receipt = Receipt.new(receipt_params)
     user_id = current_user.id
+
+
+    @receipt.articles.each do |article|
+      warranty_time = article.warranty_time
+      article.warranty_expires = @receipt.shopping_date.advance(months: warranty_time)
+    end
+
     @receipt.user_id = user_id
     @receipt.save
     respond_with(@receipt)
@@ -64,7 +71,7 @@ class ReceiptsController < ApplicationController
   end
 
   def receipt_params
-    params.require(:receipt).permit(:name, :shopping_date, :shop_id, :file, articles_attributes: [ :id, :name, :brand, :warranty_time, :receipt_id, :_destroy ])
+    params.require(:receipt).permit(:name, :shopping_date, :shop_id, :file, articles_attributes: [ :id, :name, :brand, :warranty_time, :warranty_expires, :receipt_id, :_destroy ])
   end
 
 
