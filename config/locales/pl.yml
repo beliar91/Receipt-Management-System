@@ -20,7 +20,7 @@ pl:
         street: Ulica
         city: Miasto
         telephone: Telefon
-        user_id: Użytkownik
+        user_id: Utworzył Użytkownik
         latitude: Szerokość geogr.
         longitude: Dlugość geogr.
         created_at: Utworzono

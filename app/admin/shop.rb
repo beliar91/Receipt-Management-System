@@ -20,6 +20,11 @@ ActiveAdmin.register Shop do
     column "Miasto", :city, :class => 'center'
     column :email, :class => 'center'
     column "Telefon", :telephone, :class => 'center'
+
+    column "Utworzył użytkownik", :class => 'center' do |u|
+      user = User.find(u.user_id).email
+    end
+
     column "Utworzono", :created_at, :class => 'center'
     column "Zaktualizowano", :updated_at, :class => 'center'
     column "Szerokość geogr.", :latitude, :class => 'center'

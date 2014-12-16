@@ -1,3 +1,4 @@
+#encoding: utf-8
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -17,6 +18,10 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
       false
     end
+  end
+
+  def authenticate_admin_user!
+    redirect_to root_path flash[:error] = "Nie jesteś administratorem." unless current_user.try(:admin?)
   end
 
 
