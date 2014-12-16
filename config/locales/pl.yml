@@ -1,3 +1,4 @@
+#encoding: utf-8
 pl:
   activerecord:
     models:
@@ -7,16 +8,35 @@ pl:
       receipt:
         one: Paragon
         other: Paragony
+      user:
+        one: Użytkownik
+        other: Użytkownicy
+      article:
+        one: Artykuł
+        other: Artykuły
     attributes:
       shop:
         name: Nazwa
         street: Ulica
         city: Miasto
         telephone: Telefon
-        latitude: Szerokosc geogr.
-        longitude: Dlugosc geogr.
+        user_id: Użytkownik
+        latitude: Szerokość geogr.
+        longitude: Dlugość geogr.
         created_at: Utworzono
         updated_at: Zaktualizowano
+      receipt:
+        id: Paragon
+        shopping_date: Data zakupów
+        created_at: Utworzono
+        updated_at: Zaktualizowano
+        file_file_name: Nazwa pliku
+        file_content_type: Rodzaj obrazka
+        file_file_size: Rozmiar(w kB)
+        file_updated_at: Data aktualizacji pliku
+        name: Nazwa
+        shop_id: Zakupiono w sklepie
+        user_id: Utworzył użytkownik
   date:
     formats:
       default: "%d %B %Y"

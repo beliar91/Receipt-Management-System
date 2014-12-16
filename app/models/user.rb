@@ -8,5 +8,8 @@ class User < ActiveRecord::Base
   has_many :shops
   has_many :receipts
 
+  def display_name
+    self.email
+  end
 
 end

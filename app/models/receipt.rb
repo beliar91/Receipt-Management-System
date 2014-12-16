@@ -14,6 +14,8 @@ class Receipt < ActiveRecord::Base
   belongs_to :shop
   belongs_to :user
 
-
+  def display_name
+    self.name
+  end
 
 end

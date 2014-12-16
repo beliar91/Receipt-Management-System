@@ -4,6 +4,7 @@
 <table>
   <thead>
     <tr>
+      <th>Nazwa paragonu</th>
       <th>Zdjęcie paragonu</th>
       <th>Data zakupów</th>
       <th>Sklep</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @receipts.each do |receipt| %>
       <tr>
+        <td class="text-center"><% if receipt.name.blank? %><%= "brak" %><% else %><%= receipt.name %> <%end %>           </td>
         <td class="text-center"> <% if receipt.file.present?%> <%= image_tag receipt.file.url(:small) %></td>
             <% else %><%= "brak" %>
         <%end%>

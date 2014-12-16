@@ -2,11 +2,22 @@
 
 <h3>Przeglądanie paragonu</h3>
 
+<p >
+  <strong>Nazwa paragonu:</strong>
+  <% if @receipt.name.blank? %>
+      <%= "brak" %>
+      <% else %>
+        <%= @receipt.name %>
+      <% end %>
+
+</p>
+
 <% if @receipt.file.present? %>
 <p><strong>Zdjęcie paragonu:</strong>
   <%= image_tag @receipt.file.url(:medium) %>
 </p>
 <% end %>
+
 
 <p >
   <strong>Data zakupów</strong>

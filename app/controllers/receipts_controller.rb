@@ -19,6 +19,8 @@ class ReceiptsController < ApplicationController
 
   def index
     @receipts = current_user.receipts
+
+
     respond_with(@receipts)
   end
 
@@ -62,7 +64,7 @@ class ReceiptsController < ApplicationController
   end
 
   def receipt_params
-    params.require(:receipt).permit(:shopping_date, :shop_id, :file, articles_attributes: [ :id, :name, :brand, :warranty_time, :receipt_id, :_destroy ])
+    params.require(:receipt).permit(:name, :shopping_date, :shop_id, :file, articles_attributes: [ :id, :name, :brand, :warranty_time, :receipt_id, :_destroy ])
   end
 
 
