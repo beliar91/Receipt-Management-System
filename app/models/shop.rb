@@ -1,7 +1,7 @@
 class Shop < ActiveRecord::Base
 
-  include Tire::Model::Search
-  include Tire::Model::Callbacks
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
 
   validates :email, uniqueness: true
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create, message: "niepoprawny" }

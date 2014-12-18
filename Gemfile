@@ -36,7 +36,9 @@ gem 'foundation_rails_helper'
 gem 'geocoder'
 
 #wyszukiwanie tekstowe:
-gem 'tire'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+gem 'bonsai-elasticsearch-rails'
 
 #zalaczniki tekstowe:
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
