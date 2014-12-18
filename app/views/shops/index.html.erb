@@ -2,7 +2,9 @@
 
 <%= form_tag shops_path, :method => :get do %>
     <p>
+      <div class="large-3 columns">
       <%= text_field_tag :query, params[:query] %>
+      </div>
       <%= submit_tag "Szukaj", :name => nil, class: "button small success" %>
     </p>
 <% end %>

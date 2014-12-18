@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_admin_user!
-    redirect_to root_path flash[:error] = "Nie jesteś administratorem." unless current_user.try(:admin?)
+    redirect_to root_path flash[:error] = "Nie jesteś zalogowany jako administrator." unless current_user.try(:admin?)
   end
 
 

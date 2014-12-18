@@ -9,3 +9,10 @@ pl:
     :cancel: 'Anuluj %{model}'
     :reset: 'Resetuj %{model}'
     :required: 'wymagany'
+  active_admin:
+    comments:
+      resource_type: Skomentowany obiekt
+      author_type: Rodzaj autora
+      created_at: Utworzono
+      updated_at: Zaktualizowano
+
