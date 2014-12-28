@@ -14,7 +14,7 @@
     <div class="field">
       <div class="large-12 columns">
 
-        <%= f.text_field :name, label: "Nazwa twojego paragonu" %>
+        <%= f.text_field :name, label: "Nazwa twojego paragonu", class: "textarea" %>
 
 
       </div>
@@ -32,7 +32,7 @@
 
     <div class="field">
       <div class="large-12 columns">
-          <%= f.text_field :shopping_date, label:"Data zakupów", "size" => 150 %>
+          <%= f.text_field :shopping_date, label:"Data zakupów", "size" => 150, class: "date" %>
       </div>
     </div>
 
@@ -58,7 +58,7 @@
 
     <div class="field">
       <div class="large-12 columns">
-          <%=  f.collection_select :shop_id, Shop.all, :id, :name_with_city, :prompt => "Wybierz sklep", label: "Sklep(Nazwa: Miejscowość)"  %>
+          <%=  f.collection_select :shop_id, Shop.all, :id, :name_with_city, {:prompt => "Wybierz sklep"}, { :class => 'textarea'}  %>
       </div>
     </div>
 
