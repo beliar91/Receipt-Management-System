@@ -1,0 +1,10 @@
+@mixin width($width) {
+  width: $width !important;
+}
+
+.textarea{
+  @include width(25%);
+}
+
+
+
