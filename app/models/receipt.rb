@@ -1,5 +1,8 @@
 class Receipt < ActiveRecord::Base
 
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+
   has_many :articles, dependent: :destroy
 
   has_attached_file :file, :styles => { :medium => "300x300", :small => "150x150", :thumb => "100x100>"}

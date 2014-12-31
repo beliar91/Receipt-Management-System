@@ -38,6 +38,8 @@ pl:
         name: Nazwa
         shop_id: Zakupiono w sklepie
         user_id: Utworzył użytkownik
+      complaint:
+        article_id: Wybierz artykuł do zareklamowania
   date:
     formats:
       default: "%d %B %Y"

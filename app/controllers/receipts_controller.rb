@@ -22,7 +22,6 @@ class ReceiptsController < ApplicationController
       @receipts = current_user.receipts
 
 
-
     respond_with(@receipts)
   end
 
