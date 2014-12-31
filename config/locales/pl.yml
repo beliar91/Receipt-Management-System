@@ -14,6 +14,7 @@ pl:
       article:
         one: Artykuł
         other: Artykuły
+      comment: Komentarze
     attributes:
       shop:
         name: Nazwa

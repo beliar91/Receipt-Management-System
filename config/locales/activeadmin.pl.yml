@@ -11,6 +11,7 @@ pl:
     :required: 'wymagany'
   active_admin:
     comments:
+      title: Komentarze
       resource_type: Skomentowany obiekt
       author_type: Rodzaj autora
       created_at: Utworzono

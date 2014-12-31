@@ -1,0 +1,37 @@
+<%= form_for @complaint  do |f| %>
+    <% if @complaint.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@shop.errors.count, "error") %> prohibited this complaint from being saved:</h2>
+
+          <ul>
+            <% @complaint.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <div class="large-12 columns">
+
+        <%= f.text_area :reason, label: "Powód reklamacji", class: "complaint" %>
+
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="large-12 columns">
+        <%= f.collection_select :article_id, Article.all, :id, :name_with_brand, {:prompt => "Wybierz artykuł"}, { :class => 'textarea'}  %>
+      </div>
+    </div>
+
+
+
+    <div class="actions">
+      <div class="large-12 columns">
+        <%= f.submit "Utwórz Reklamacje" %>
+      </div>
+    </div>
+
+
+<% end %>

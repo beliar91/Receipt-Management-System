@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+complaint_statuses = ComplaintStatus.create( [{name: 'Oczekuje na zaakceptowanie'}, {name: 'Odrzucona przez administratora'},
+                                              {name: 'W toku (zaakceptowana przez administratora)'},
+                                              {name: 'Uznana'},  {name: 'Nieuznana'}   ] )

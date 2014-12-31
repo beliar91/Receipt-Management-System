@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resources :articles
   end
 
+  resources :complaints
+
   devise_for :users
 
 
