@@ -22,7 +22,7 @@ class ShopsController < ApplicationController
 
   def index
     if params[:query].present?
-      @shops = Shop.search(params[:query], load:true).result
+      @shops = Shop.__elasticsearch__.search(params[:query]).records
     else
       @shops = Shop.all
     end

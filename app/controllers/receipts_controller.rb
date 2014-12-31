@@ -18,7 +18,9 @@ class ReceiptsController < ApplicationController
   end
 
   def index
-    @receipts = current_user.receipts
+
+      @receipts = current_user.receipts
+
 
 
     respond_with(@receipts)
