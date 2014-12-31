@@ -4,6 +4,26 @@ class ComplaintsController < ApplicationController
 
   respond_to :html, :xml, :json
 
+  def index
+    @complaints = current_user.complaints
+
+
+    respond_with(@receipts)
+  end
+
+  def edit
+
+  end
+
+  def update
+    @complaint.update(complaint_params)
+    respond_with(@complaint)
+  end
+
+  def show
+    respond_with(@complaint)
+  end
+
 
   def create
     @complaint = Complaint.new(complaint_params)

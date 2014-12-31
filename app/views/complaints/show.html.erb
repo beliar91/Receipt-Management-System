@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Przeglądanie złożonej reklamacji</h3>
+
+<p >
+  <strong>Reklamacja złożona w sklepie:</strong>
+
+      <%= link_to @complaint.article.receipt.shop.name, @complaint.article.receipt.shop %>
+
+</p>
+
+<p >
+  <strong>Zareklamowany artykuł:</strong>
+
+  <%= @complaint.article.name_with_brand %>
+
+</p>
+
+<p >
+  <strong>Powód reklamacji:</strong>
+
+  <%= @complaint.reason %>
+
+</p>
+
+<p >
+  <strong>Status reklamacji:</strong>
+
+  <%= @complaint.complaint_status.name %>
+
+</p>
+
