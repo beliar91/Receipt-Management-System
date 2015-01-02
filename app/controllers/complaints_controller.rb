@@ -1,3 +1,4 @@
+#encoding: utf-8
 class ComplaintsController < ApplicationController
   before_action :set_complaint, only: [:show, :edit, :update, :destroy]
   before_action :check_auth, only: [:show, :edit, :update, :destroy]
@@ -55,6 +56,7 @@ class ComplaintsController < ApplicationController
 
     @complaint.complaint_status_id=1
     @complaint.save
+    flash[:notice] = "Twoja reklamacja została utworzona. Musi teraz zostać zaakceptowana przez administratora."
     respond_with(@complaint)
   end
 
