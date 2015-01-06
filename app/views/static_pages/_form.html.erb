@@ -1,0 +1,23 @@
+<%= form_for(@static_page) do |f| %>
+    <% if @static_page.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@static_page.errors.count, "error") %> zatrzymano ta strone przed zapisaniem:</h2>
+
+          <ul>
+            <% @static_page.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.text_field :title, label: "Tytul strony", class: "textarea" %>
+    </div>
+    <div class="field">
+      <%= f.text_area :content, label: "Zawartosc strony", class: "complaint"  %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Utwórz Strone statyczna" %>
+    </div>
+<% end %>

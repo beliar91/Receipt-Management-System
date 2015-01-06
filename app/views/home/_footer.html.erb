@@ -1,0 +1,19 @@
+<footer class="row">
+  <div class="large-12 columns">
+    <hr/>
+    <div class="row">
+      <div class="large-6 columns">
+        <p>© Copyright to System Zarządzania Paragonami 2015.</p>
+      </div>
+      <div class="large-6 columns">
+        <ul class="inline-list right">
+
+          <% @static_pages.each do |page| %>
+          <li> <%= link_to page.title, page %>  </li>
+          <% end %>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

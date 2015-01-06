@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  #
+  # get 'static_pages/privacy_policy'
+  #
+  # get 'static_pages/faq'
+  #
+  # get 'static_pages/about_us'
+
+  #get ':id', to: 'static_pages#show', as: :static_page
 
   ActiveAdmin.routes(self)
   get 'shop_searches/new'
@@ -13,6 +21,8 @@ Rails.application.routes.draw do
   end
 
   resources :complaints
+
+  resources :static_pages
 
   devise_for :users
 

@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :shops
   has_many :receipts
   has_many :complaints
+  has_many :static_pages
 
   def display_name
     self.email
