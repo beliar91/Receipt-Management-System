@@ -25,10 +25,6 @@ pl:
               one: Artykuł
               other: Artykuły
             comment: Komentarze
-        template:
-          header:
-            one: "Z powodu 1 błędu ten %{model} nie został zapisany."
-            other: "%{count} błędy spowodowały, że ten %{model} nie został zapisany."
     attributes:
       shop:
         name: Nazwa sklepu

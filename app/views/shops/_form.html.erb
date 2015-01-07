@@ -1,7 +1,7 @@
 <%= form_for(@shop) do |f| %>
     <% if @shop.errors.any? %>
         <div id="error_explanation">
-          <h2><%= t('errors.messages.not_saved', count: @shop.errors.count, resource: Shop.model_name.human) %> </h2>
+          <h2><%= t('errors.messages.not_safed', count: @shop.errors.count, resource: t("models.shop.one")) %> </h2>
 
           <ul>
             <% @shop.errors.full_messages.each do |message| %>
@@ -12,7 +12,7 @@
     <% end %>
 
     <div class="field">
-      <%= f.text_field :name, label: "Nazwa", class: "textarea" %>
+      <%= f.text_field :name, label: "Nazwa*", class: "textarea" %>
     </div>
     <div class="field">
       <%= f.text_field :street, label: "Ulica", class: "textarea"  %>

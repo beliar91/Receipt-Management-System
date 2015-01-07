@@ -2,6 +2,13 @@
 pl:
   errors:
     messages:
-      not_saved:
-        one: '1 błąd spowodował, że ten %{resource} nie został zapisany.'
-        other: '%{count} błędy spowodowały, że ten %{resource} nie został zapisany.'
+      not_safed:
+        one: '1 błąd zapobiegł przed zapisaniem tego %{resource}:'
+        other: '%{count} błędy zapobiegły przed zapisaniem tego %{resource}:'
+        many: '%{count} błędy zapobiegły przed zapisaniem tego %{resource}:'
+        few:  '%{count} błędy zapobiegły przed zapisaniem tego %{resource}:'
+
+  models:
+    shop:
+      one: Sklepu
+      other: Sklepu
