@@ -1,3 +1,4 @@
+#encoding: utf-8
 class StaticPagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
 
@@ -37,20 +38,6 @@ class StaticPagesController < ApplicationController
   end
 
 
-  def index
-    $static_pages = StaticPage.all
-    respond_with ($static_pages)
-  end
-
-  def privacy_policy
-  end
-
-  def faq
-  end
-
-  def about_us
-  end
-
   private
 
   def set_page
@@ -60,5 +47,6 @@ class StaticPagesController < ApplicationController
   def page_params
     params.require(:static_page).permit(:title, :content, :user_id)
   end
+
 
 end

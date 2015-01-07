@@ -1,6 +1,7 @@
 class ShopsController < ApplicationController
   before_action :set_shop, only: [:show, :edit, :update, :destroy]
   before_action :check_auth, only: [:edit, :update, :destroy]
+  before_action :check_login
 
 
   #before_filter :authorize, :except => [:index, :show, :new, :create]

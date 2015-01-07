@@ -24,7 +24,17 @@ Rails.application.routes.draw do
 
   resources :static_pages
 
-  devise_for :users
+  devise_for :users, :skip => [:sessions]
+
+  as :user do
+    get '/' => 'home#index', :as => :new_user_session
+    post 'sign_in' => 'devise/sessions#create', :as => :user_session
+    get 'sign_out' => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
+
+
+
+
 
 
   resources :dashboard

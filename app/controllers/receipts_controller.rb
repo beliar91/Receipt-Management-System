@@ -1,6 +1,7 @@
 class ReceiptsController < ApplicationController
   before_action :set_shop, only: [:show, :edit, :update, :destroy]
   before_action :check_auth, only: [:show, :edit, :update, :destroy]
+  before_action :check_login
 
   respond_to :html, :xml, :json
 

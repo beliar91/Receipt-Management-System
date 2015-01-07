@@ -1,0 +1,7 @@
+#encoding: utf-8
+pl:
+  errors:
+    messages:
+      not_saved:
+        one: '1 błąd spowodował, że ten %{resource} nie został zapisany.'
+        other: '%{count} błędy spowodowały, że ten %{resource} nie został zapisany.'

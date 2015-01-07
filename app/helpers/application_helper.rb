@@ -1,3 +1,4 @@
+#encoding: utf-8
 module ApplicationHelper
 
   include FoundationRailsHelper::FlashHelper
@@ -26,6 +27,7 @@ module ApplicationHelper
     end
     link_to(name, '#', class: "add_fields small button", data: {id: id, fields: fields.gsub("\n", "")})
   end
+
 
 
 end

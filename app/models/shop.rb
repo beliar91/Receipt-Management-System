@@ -5,12 +5,15 @@ class Shop < ActiveRecord::Base
 
   validates :email, uniqueness: true
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create, message: "niepoprawny" }
+  validates_presence_of :name
+
+
 
   geocoded_by :address
   after_validation :geocode
 
 
-  validates_presence_of :name
+
 
   has_many :receipts
   belongs_to :user

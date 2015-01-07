@@ -13,7 +13,7 @@
         <%= f.password_field :password, label: "Hasło" %>
         <%= f.check_box :remember_me, label: "Zapamiętaj mnie" %>
         <%= f.submit 'Zaloguj się' %>
-        <%= link_to "Zapomniałeś hasła?", new_password_path(:user) %>
+        <%= link_to "Zapomniałeś hasła?", new_password_path(:user), class: "small button alert" %>
     <% end %>
   </div>
   <div class="large-6 columns">

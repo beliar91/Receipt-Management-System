@@ -1,5 +1,4 @@
-# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
-
+#encoding: utf-8
 pl:
   devise:
     confirmations:
@@ -12,7 +11,7 @@ pl:
       invalid: "Niepoprawny %{authentication_keys} lub hasło."
       locked: "Your account is locked."
       last_attempt: "You have one more attempt before your account is locked."
-      not_found_in_database: "Invalid %{authentication_keys} or password."
+      not_found_in_database: "Niepoprawny %{authentication_keys} lub hasło."
       timeout: "Your session expired. Please sign in again to continue."
       unauthenticated: "You need to sign in or sign up before continuing."
       unconfirmed: "You have to confirm your email address before continuing."
@@ -34,7 +33,7 @@ pl:
       updated_not_active: "Pomyślnie zmieniono hasło."
     registrations:
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
-      signed_up: "Welcome! You have signed up successfully."
+      signed_up: "Witaj! Zarejestrowałeś się pomyślnie."
       signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
       signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
       signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."

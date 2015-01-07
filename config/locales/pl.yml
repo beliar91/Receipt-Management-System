@@ -1,23 +1,37 @@
 #encoding: utf-8
 pl:
   activerecord:
-    models:
-      shop:
-        one: Sklep
-        other: Sklepy
-      receipt:
-        one: Paragon
-        other: Paragony
-      user:
-        one: Użytkownik
-        other: Użytkownicy
-      article:
-        one: Artykuł
-        other: Artykuły
-      comment: Komentarze
+    errors:
+        models:
+            shop:
+              one: Sklep
+              other: Sklepy
+              attributes:
+                name:
+                  blank: nie może być pusta
+            receipt:
+              one: Paragon
+              other: Paragony
+            user:
+              one: Użytkownik
+              other: Użytkownicy
+              attributes:
+                password:
+                  blank: nie może być puste
+                  too_short: jest zbyt krótkie (minimum 8 znaków)
+                email:
+                  blank: nie może być pusty
+            article:
+              one: Artykuł
+              other: Artykuły
+            comment: Komentarze
+        template:
+          header:
+            one: "Z powodu 1 błędu ten %{model} nie został zapisany."
+            other: "%{count} błędy spowodowały, że ten %{model} nie został zapisany."
     attributes:
       shop:
-        name: Nazwa
+        name: Nazwa sklepu
         street: Ulica
         city: Miasto
         telephone: Telefon
@@ -40,6 +54,8 @@ pl:
         user_id: Utworzył użytkownik
       complaint:
         article_id: Wybierz artykuł do zareklamowania
+      user:
+        password: Hasło
   date:
     formats:
       default: "%d %B %Y"
