@@ -57,7 +57,6 @@ class ShopsController < ApplicationController
 
   def destroy
     @shop.destroy
-    @shop.tire.update_index
     flash[:notice] = "Pomyslnie usunieto sklep."
     redirect_to shops_path
   end

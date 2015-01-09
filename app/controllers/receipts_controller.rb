@@ -32,24 +32,18 @@ class ReceiptsController < ApplicationController
 
   def new
     @receipt = Receipt.new
-    2.times do
-      @receipt.articles.build
-    end
+    @receipt.articles.build
+
     respond_with(@receipt)
   end
 
   def edit
+    @receipt.articles.build
   end
 
   def create
     @receipt = Receipt.new(receipt_params)
     user_id = current_user.id
-
-
-    @receipt.articles.each do |article|
-      warranty_time = article.warranty_time
-      article.warranty_expires = @receipt.shopping_date.advance(months: warranty_time)
-    end
 
     @receipt.user_id = user_id
     @receipt.save
@@ -58,7 +52,8 @@ class ReceiptsController < ApplicationController
 
   def update
     @receipt.update(receipt_params)
-    respond_with(@receipt)
+    respond_with (@receipt)
+
   end
 
   def destroy
@@ -73,7 +68,7 @@ class ReceiptsController < ApplicationController
   end
 
   def receipt_params
-    params.require(:receipt).permit(:name, :shopping_date, :shop_id, :file, articles_attributes: [ :id, :name, :brand, :warranty_time, :warranty_expires, :receipt_id, :_destroy ])
+    params.require(:receipt).permit(:name, :shopping_date, :shop_id, :file, articles_attributes: [:id, :name, :brand, :warranty_time, :warranty_expires, :receipt_id, :_destroy])
   end
 
 

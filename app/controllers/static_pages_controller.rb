@@ -32,7 +32,6 @@ class StaticPagesController < ApplicationController
 
   def destroy
     @static_page.destroy
-    @static_page.tire.update_index
     flash[:notice] = "Pomyslnie usunieto strone statyczna."
     redirect_to shops_path
   end

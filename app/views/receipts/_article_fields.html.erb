@@ -14,7 +14,8 @@
   </div>
 
   <div class="large-12 columns">
-  <%= link_to "usun artykul", '#', class: "remove_fields button small alert" %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "remove article", '#', class: "remove_fields button small alert" %>
   </div>
 
 </fieldset>

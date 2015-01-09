@@ -30,11 +30,12 @@
 </p>
 
 <p >
-  <strong>Artykuły znajdujące się na paragonie:</strong>
+  <strong>Artykuły znajdujace sie na paragonie:</strong>
   <% @receipt.articles.each_with_index do |article, index| %>
       <li><%= (index+1).to_s + ") " %><%= article.name_with_brand %> <%= "- gwarancja wygasa: " %> <strong><%= I18n.localize(article.warranty_expires)  %></strong></li>
   <% end %>
    </p>
+<!-- I18n.localize() dodać do warranty_expires po tym jak sprawdzić czemu warranty_expires jest null -->
 
 <p>
   <strong>Kupiono w sklepie:</strong>
@@ -45,7 +46,6 @@
   <%= @receipt.shop.city %>
 </p>
 
-<% if admin? %>
-<%= link_to 'Edytuj', edit_receipt_path(@receipt) %> |
-<% end %>
-<%= link_to 'Powrót', receipts_path %>
+
+<%= link_to 'Edytuj', edit_receipt_path(@receipt), class: "button" %> |
+<%= link_to 'Powrót', receipts_path, class: "button success" %>

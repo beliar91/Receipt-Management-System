@@ -9,16 +9,29 @@
 
 <p>
   <strong>Ulica:</strong>
+    <% if @shop.street.blank? %>
+    <%= 'Nie podano' %>
+  <% else %>
   <%= @shop.street %>
+  <% end %>
 </p>
 
 <p>
   <strong>Miasto:</strong>
+    <% if @shop.city.blank? %>
+    <%= 'Nie podano' %>
+  <% else %>
   <%= @shop.city %>
+  <% end %>
 </p>
-
+<strong>Mapa dojazdu: </strong>
+<br > </br>
 <p>
+        <% if @shop.city.blank? || @shop.street.blank? %>
+        <%= 'Brak mapy, gdyż nie podano ulicy lub miasta' %>
+  <% else %>
   <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@shop.latitude}%2C#{@shop.longitude}" %>
+  <% end %>
 </p>
 
 <p>
@@ -30,7 +43,4 @@
   <strong>Telefon:</strong>
   <%= @shop.telephone %>
 </p>
-<% if admin? %>
-<%= link_to 'Edytuj', edit_shop_path(@shop), class: "button black" %> |
-<% end %>
 <%= link_to 'Powrót do Sklepów', shops_path, class: "button success" %> <%= link_to 'Powrót do Paragonów', receipts_path, class: "button" %>

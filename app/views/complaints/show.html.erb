@@ -30,24 +30,28 @@
 
 <p> <strong>Postęp: </strong>
 
-  <% case @complaint.complaint_status_id   %>
+    <% if @complaint.complaint_status_id==1 %>
 
-    <% when 1  %>
     <div class="progress large-9 success round progresswidth"> <span class="meter" style="width: 20%"></span> </div>
 
-    <% when 2 %>
-    <div class="progress large-9 alert round progresswidth"> <span class="meter" style="width: 100%"></span> </div>
+    <% end %>
 
-    <% when 3 %>
+    <% if @complaint.complaint_status_id==2 %>
+    <div class="progress large-9 alert round progresswidth"> <span class="meter" style="width: 100%"></span> </div>
+    <% end %>
+
+    <% if @complaint.complaint_status_id==3 %>
     <div class="progress large-9 success round progresswidth"> <span class="meter" style="width: 50%"></span> </div>
+    <% end %>
 
-    <% when 4 %>
+    <% if @complaint.complaint_status_id==4 %>
     <div class="progress large-9 success round progresswidth"> <span class="meter" style="width: 100%"></span> </div>
+    <% end %>
 
-    <% when 5 %>
+    <% if @complaint.complaint_status_id==5 %>
     <div class="progress large-9 alert round progresswidth"> <span class="meter" style="width: 100%"></span> </div>
+    <% end %>
 
-<% end %>
 
 </p>
 

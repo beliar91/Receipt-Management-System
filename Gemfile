@@ -47,6 +47,7 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 gem 'activeadmin', github: 'activeadmin'
 
+#i18n
 gem 'rails-i18n', '~> 4.0.0'
 
 

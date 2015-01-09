@@ -24,13 +24,14 @@ Rails.application.routes.draw do
 
   resources :static_pages
 
-  devise_for :users, :skip => [:sessions]
+  devise_for :users #, :skip => [:sessions]
 
-  as :user do
-    get '/' => 'home#index', :as => :new_user_session
-    post 'sign_in' => 'devise/sessions#create', :as => :user_session
-    get 'sign_out' => 'devise/sessions#destroy', :as => :destroy_user_session
-  end
+  # as :user do
+  #   get '/' => 'home#index', :as => :new_user_session
+  #   post '/' => 'devise/sessions#create', :as => :user_session
+  #   post '/' => 'devise/registrations#create', :as => :user_reg
+  #   get 'sign_out' => 'devise/sessions#destroy', :as => :destroy_user_session
+  # end
 
 
 
