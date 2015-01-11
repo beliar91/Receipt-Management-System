@@ -9,9 +9,16 @@ pl:
               attributes:
                 name:
                   blank: nie może być pusta
+                email:
+                  taken: jest już zajęty
             receipt:
               one: Paragon
               other: Paragony
+              attributes:
+                shopping_date:
+                  blank: nie może być pusta
+                shop_id:
+                  blank: musi zostać wybrany
             user:
               one: Użytkownik
               other: Użytkownicy
@@ -46,7 +53,7 @@ pl:
         file_file_size: Rozmiar(w kB)
         file_updated_at: Data aktualizacji pliku
         name: Nazwa
-        shop_id: Zakupiono w sklepie
+        shop_id: Sklep
         user_id: Utworzył użytkownik
       complaint:
         article_id: Wybierz artykuł do zareklamowania

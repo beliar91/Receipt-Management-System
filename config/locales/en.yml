@@ -22,4 +22,4 @@
 en:
   errors:
     messages:
-      blank: "nie może być puste"
+      blank:

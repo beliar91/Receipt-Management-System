@@ -8,7 +8,12 @@ class Receipt < ActiveRecord::Base
 
   validates_attachment_content_type :file, :content_type => /\Aimage\/.*\Z/
 
+  validates_presence_of :shopping_date
+  validates_presence_of :shop_id
+
   accepts_nested_attributes_for :articles, allow_destroy:true, :reject_if => :all_blank
+
+  validate :shop_articles_count
 
 
   belongs_to :shop
@@ -17,5 +22,13 @@ class Receipt < ActiveRecord::Base
   def display_name
     self.name
   end
+
+  def shop_articles_count
+    if self.articles.count ==0
+      errors.add("Paragon", "musi miec przynajmniej 1 artykul")
+    end
+  end
+
+
 
 end

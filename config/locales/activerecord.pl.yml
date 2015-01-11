@@ -12,3 +12,6 @@ pl:
     shop:
       one: Sklepu
       other: Sklepu
+    receipt:
+      one: Paragonu
+      other: Paragonu

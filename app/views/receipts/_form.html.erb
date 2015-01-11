@@ -1,7 +1,7 @@
 <%= form_for @receipt, :html => { :multipart => true } do |f| %>
   <% if @receipt.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@shop.errors.count, "error") %> prohibited this receipt from being saved:</h2>
+      <h2><%= t('errors.messages.not_safed', count: @receipt.errors.count, resource: t("models.receipt.one")) %> </h2>
 
       <ul>
       <% @receipt.errors.full_messages.each do |message| %>
@@ -32,7 +32,7 @@
 
     <div class="field">
       <div class="large-12 columns">
-          <%= f.text_field :shopping_date, label:"Data zakupów", "size" => 150, class: "date" %>
+          <%= f.text_field :shopping_date, label:"Data zakupów*", "size" => 150, class: "date" %>
       </div>
     </div>
 
@@ -50,22 +50,22 @@
             </div>
             <% end %>
 
-        <%= link_to_add_fields "add an another article", f, :articles %>
+        <%= link_to_add_fields "Dodaj artykuł", f, :articles %>
 
       </div>
     </div>
 
 
     <div class="field">
-      <div class="large-12 columns">
-          <%=  f.collection_select :shop_id, Shop.all, :id, :name_with_city, {:prompt => "Wybierz sklep"}, { :class => 'textarea'}  %>
+      <div class="small-3 columns">
+          <%=  f.collection_select :shop_id, Shop.all, :id, :name_with_city, {:prompt => "Wybierz sklep"}, { class: "custom dropdown"}  %>
       </div>
     </div>
 
 
   <div class="actions">
     <div class="large-12 columns">
-        <%= f.submit "submit receipt" %>
+        <%= f.submit "Utwórz Paragon" %>
     </div>
   </div>
 
