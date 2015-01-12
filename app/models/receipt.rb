@@ -13,7 +13,7 @@ class Receipt < ActiveRecord::Base
 
   accepts_nested_attributes_for :articles, allow_destroy:true, :reject_if => :all_blank
 
-  validate :shop_articles_count
+  after_save :receipt_articles_count
 
 
   belongs_to :shop
@@ -23,9 +23,10 @@ class Receipt < ActiveRecord::Base
     self.name
   end
 
-  def shop_articles_count
+  def receipt_articles_count
     if self.articles.count ==0
       errors.add("Paragon", "musi miec przynajmniej 1 artykul")
+      return false
     end
   end
 

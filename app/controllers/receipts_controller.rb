@@ -38,7 +38,7 @@ class ReceiptsController < ApplicationController
   end
 
   def edit
-    @receipt.articles.build
+
   end
 
   def create

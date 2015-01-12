@@ -9,7 +9,7 @@ class Shop < ActiveRecord::Base
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create, message: "niepoprawny format" }, :allow_blank => true, :if => :email?
   validates_presence_of :name
 
-  validates_length_of :telephone, :minimum => 9, :maximum => 11, :message => "musi zawierać 9 cyfr", :allow_blank => true
+  #validates_length_of :telephone, :minimum => 9, :maximum => 11, :message => "musi zawierać 9 cyfr", :allow_blank => true
 
 
 

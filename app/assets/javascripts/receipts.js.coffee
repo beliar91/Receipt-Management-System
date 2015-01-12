@@ -15,6 +15,4 @@ jQuery ->
     event.preventDefault()
 
 
-$(document).ready(jQuery)
-$(document).on('page:load', jQuery)
 

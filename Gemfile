@@ -8,8 +8,6 @@ source 'http://rubygems.org'
 
 gem 'devise'
 
-gem "simple-navigation"
-
 gem "pg"
 
 # Use SCSS for stylesheets
@@ -23,10 +21,12 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 
-#datepicker+jquery
+#datepicker+jquery+jquery mask
 gem "jquery-rails", "~> 2.0.1"
 gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
+
+gem 'jquery-inputmask-rails', github: 'knapo/jquery-inputmask-rails'
 
 #css+front-end framework
 gem 'zurb-foundation'
