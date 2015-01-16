@@ -1,0 +1,64 @@
+<%= form_for @complaint_review  do |f| %>
+    <% if @complaint_review.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@complaint_review.errors.count, "error") %> prohibited this complaint_review from being saved:</h2>
+
+          <ul>
+            <% @complaint_review.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <div class="large-12 columns">
+
+        <%= f.collection_select :complaint_id, Complaint.all, :id, :reason, {:prompt => "Wybierz reklamacje"}, { :class => 'textarea'}%>
+
+      </div>
+    </div>
+
+
+    <div class="field">
+      <div class="large-12 columns">
+
+        Czas rozpatrzenia
+
+
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="large-12 columns">
+
+        Stosunek do klienta
+
+
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="large-12 columns">
+
+        Zadowolenie
+
+
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="large-12 columns">
+        <%= f.text_area :comment, label: "Komentarz", class: "complaint" %>
+      </div>
+    </div>
+
+
+    <div class="actions">
+      <div class="large-12 columns">
+        <%= f.submit "Utwórz Ocene reklamacji" %>
+      </div>
+    </div>
+
+
+<% end %>

@@ -53,7 +53,6 @@ class ComplaintsController < ApplicationController
     user_id = current_user.id
     @complaint.user_id = user_id
 
-    @complaint.inspect
 
     @complaint.complaint_status_id=1
     @complaint.save

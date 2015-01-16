@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'complaint_reviews/new'
+
+  get 'complaint_reviews/update'
+
+  get 'complaint_reviews/edit'
+
+  get 'complaint_reviews/delete'
+
   #
   # get 'static_pages/privacy_policy'
   #
@@ -23,6 +31,8 @@ Rails.application.routes.draw do
   resources :complaints
 
   resources :static_pages
+
+  resources :complaint_reviews
 
   devise_for :users #, :skip => [:sessions]
 

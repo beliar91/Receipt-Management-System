@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :receipts
   has_many :complaints
   has_many :static_pages
+  has_many :complaint_reviews
 
   def display_name
     self.email

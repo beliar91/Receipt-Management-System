@@ -1,0 +1,46 @@
+<h3>Przeglądanie złożonej oceny reklamacji</h3>
+
+<p >
+  <strong>Powód reklamacji:</strong>
+
+      <%= @complaint_review.complaint.reason %>
+
+</p>
+
+<p >
+  <strong>Ocena czasu rozpatrzenia reklamacji [1-5]:</strong>
+
+  <%= @complaint_review.examination_time %>
+
+</p>
+
+<p >
+  <strong>Ocena stosunku do klienta podczas reklamacji [1-5]:</strong>
+
+  <%= @complaint_review.client_approach %>
+
+</p>
+
+<p >
+  <strong>Zadowolenie klienta z przebiegu reklamacji [1-5]:</strong>
+
+  <%= @complaint_review.satisfaction %>
+
+</p>
+
+
+<p >
+  <strong>Komentarz dotyczacy oceny reklamacji:</strong>
+
+  <%= @complaint_review.comment %>
+
+</p>
+
+
+
+
+
+
+
+
+

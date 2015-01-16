@@ -1,0 +1,34 @@
+<h1>Oceny Reklamacji</h1>
+
+
+<table>
+  <thead>
+  <tr>
+    <th class="text-center">Nazwa reklamowanego sklepu</th>
+    <th class="text-center">Powód reklamacji</th>
+    <th class="text-center">Reklamowany artykuł</th>
+    <th class="text-center">Status reklamacji</th>
+    <th class="text-center" width="30%">Postęp</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @complaints.each do |complaint| %>
+      <tr>
+        <td class="text-center"><%= link_to complaint.article.receipt.shop.name, complaint.article.receipt.shop %>          </td>
+        <td class="text-center"> <%= complaint.reason %>
+          <td class="text-center"><%= complaint.article.name_with_brand %></td>
+          <td class="text-center"><%= complaint.complaint_status.name  %></td>
+          <td class="text-center"><%= render "progress_bar", :f => complaint %></td>
+          <td><%= link_to 'Szczegóły', complaint, class: "button small success" %></td>
+          <td><%= link_to 'Edytuj', edit_complaint_path(complaint), class: "button small" %></td>
+          <td><%= link_to 'Usuń', complaint, method: :delete, data: { confirm: 'Jesteś pewien?' }, class: "button small alert"   %></td>
+          </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Nowa reklamacja', new_complaint_path, class: "button" %>
+
