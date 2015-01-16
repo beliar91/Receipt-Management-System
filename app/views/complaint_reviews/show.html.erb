@@ -8,23 +8,23 @@
 </p>
 
 <p >
-  <strong>Ocena czasu rozpatrzenia reklamacji [1-5]:</strong>
+  <strong>Ocena czasu rozpatrzenia reklamacji:</strong>
 
-  <%= @complaint_review.examination_time %>
-
-</p>
-
-<p >
-  <strong>Ocena stosunku do klienta podczas reklamacji [1-5]:</strong>
-
-  <%= @complaint_review.client_approach %>
+<div class="examination_time_read_only" data-score= <%= @complaint_review.examination_time %> ></div>
 
 </p>
 
 <p >
-  <strong>Zadowolenie klienta z przebiegu reklamacji [1-5]:</strong>
+  <strong>Ocena stosunku do klienta podczas reklamacji:</strong>
 
-  <%= @complaint_review.satisfaction %>
+<div class="client_approach_read_only" data-score= <%= @complaint_review.client_approach %> ></div>
+
+</p>
+
+<p >
+  <strong>Zadowolenie klienta z przebiegu reklamacji:</strong>
+
+<div class="satisfaction_read_only" data-score= <%= @complaint_review.satisfaction %> ></div>
 
 </p>
 
