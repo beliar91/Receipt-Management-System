@@ -14,7 +14,7 @@
     <div class="field">
       <div class="large-12 columns">
 
-        <%= f.collection_select :complaint_id, Complaint.all, :id, :reason, {:prompt => "Wybierz reklamacje"}, { :class => 'textarea'}%>
+        <%= f.collection_select :complaint_id, Complaint.where('complaint_status_id BETWEEN 4 AND 5 AND already_reviewed=false'), :id, :reason, {:prompt => "Wybierz reklamacje"}, { :class => 'textarea'}%>
 
       </div>
     </div>
@@ -22,9 +22,10 @@
 
     <div class="field">
       <div class="large-12 columns">
+        <br>
         Czas rozpatrzenia
         <div id="examination_time"></div>
-
+        <br>
 
 
       </div>
@@ -32,9 +33,10 @@
 
     <div class="field">
       <div class="large-12 columns">
+        <br>
         Stosunek do klienta
         <div id="client_approach"></div>
-
+        <br>
 
 
       </div>
@@ -42,9 +44,10 @@
 
     <div class="field">
       <div class="large-12 columns">
+        <br>
         Zadowolenie
         <div id="satisfaction"></div>
-
+        <br>
 
 
       </div>

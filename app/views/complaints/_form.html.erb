@@ -21,7 +21,7 @@
 
     <div class="field">
       <div class="large-12 columns">
-        <%= f.collection_select :article_id, Article.all, :id, :name_with_brand, {:prompt => "Wybierz artykuł"}, { :class => 'textarea'}  %>
+        <%= f.collection_select :article_id, Article.where('already_complained=false'), :id, :name_with_brand, {:prompt => "Wybierz artykuł"}, { :class => 'textarea'}  %>
       </div>
     </div>
 

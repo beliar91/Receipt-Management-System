@@ -5,6 +5,8 @@ class ComplaintReviewsController < ApplicationController
 
   respond_to :html, :xml, :json
 
+
+
   def check_auth
     user_id = current_user.id
     user = current_user
@@ -21,6 +23,7 @@ class ComplaintReviewsController < ApplicationController
 
   def index
     @complaint_reviews = current_user.complaint_reviews
+
     respond_with(@complaint_reviews)
   end
 
@@ -45,6 +48,9 @@ class ComplaintReviewsController < ApplicationController
   end
 
   def show
+
+    @sum = @complaint_review.sum_review_ratings
+
     respond_with(@complaint_review)
   end
 

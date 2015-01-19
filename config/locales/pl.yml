@@ -59,6 +59,8 @@ pl:
         article_id: Wybierz artykuł do zareklamowania
       user:
         password: Hasło
+      complaint_review:
+        complaint_id: Reklamacja
   date:
     formats:
       default: "%d %B %Y"

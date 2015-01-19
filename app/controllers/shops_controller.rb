@@ -2,12 +2,36 @@ class ShopsController < ApplicationController
   before_action :set_shop, only: [:show, :edit, :update, :destroy]
   before_action :check_auth, only: [:edit, :update, :destroy]
   before_action :check_login
+  before_action :calculate_rating, only: :show
 
 
   #before_filter :authorize, :except => [:index, :show, :new, :create]
 
   respond_to :html, :xml, :json
 
+
+  def calculate_rating
+
+    examination_time = ComplaintReview.joins(complaint: {article: {receipt: :shop}}).
+        where(shops: {id: @shop.id}).sum(:examination_time)
+
+    client_approach = ComplaintReview.joins(complaint: {article: {receipt: :shop}}).
+        where(shops: {id: @shop.id}).sum(:client_approach)
+
+    satisfaction = ComplaintReview.joins(complaint: {article: {receipt: :shop}}).
+        where(shops: {id: @shop.id}).sum(:satisfaction)
+
+    sum = examination_time+client_approach+satisfaction
+
+    count = ComplaintReview.
+        joins(complaint: {article: {receipt: :shop}}).
+        where(shops: {id: @shop.id}).
+        count*3
+
+    @overall_rating = (sum.to_f/count).round(2)
+
+
+  end
 
   def check_auth
     user_id = current_user.id
@@ -31,11 +55,13 @@ class ShopsController < ApplicationController
   end
 
   def show
+
     respond_with(@shop)
   end
 
   def new
     @shop = Shop.new
+
     respond_with(@shop)
   end
 

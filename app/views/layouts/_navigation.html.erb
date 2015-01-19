@@ -1,3 +1,4 @@
+#encoding: utf-8
 <nav class="top-bar">
   <ul class="title-area">
     <li class="name">
@@ -31,6 +32,13 @@
             <ul class="dropdown">
               <li><%= link_to "Przeglądaj", complaints_path %></li>
               <li><%= link_to "Dodaj nową", new_complaint_path %></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#">Oceń reklamacje</a>
+            <ul class="dropdown">
+              <li><%= link_to "Przeglądaj", complaint_reviews_path %></li>
+              <li><%= link_to "Dodaj nową", new_complaint_review_path %></li>
             </ul>
           </li>
           <li class="divider"></li>

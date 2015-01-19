@@ -4,31 +4,29 @@
 <table>
   <thead>
   <tr>
-    <th class="text-center">Nazwa reklamowanego sklepu</th>
-    <th class="text-center">Powód reklamacji</th>
-    <th class="text-center">Reklamowany artykuł</th>
-    <th class="text-center">Status reklamacji</th>
-    <th class="text-center" width="30%">Postęp</th>
+    <th class="text-center">Oceniany sklep</th>
+    <th class="text-center">Ocena czasu realizacji reklamacji</th>
+    <th class="text-center">Ocena podejścia do klienta</th>
+    <th class="text-center">Ocena satysfakcji klienta</th>
     <th colspan="3"></th>
   </tr>
   </thead>
 
   <tbody>
-  <% @complaints.each do |complaint| %>
+  <% @complaint_reviews.each do |complaint_review| %>
       <tr>
-        <td class="text-center"><%= link_to complaint.article.receipt.shop.name, complaint.article.receipt.shop %>          </td>
-        <td class="text-center"> <%= complaint.reason %>
-          <td class="text-center"><%= complaint.article.name_with_brand %></td>
-          <td class="text-center"><%= complaint.complaint_status.name  %></td>
-          <td class="text-center"><%= render "progress_bar", :f => complaint %></td>
-          <td><%= link_to 'Szczegóły', complaint, class: "button small success" %></td>
-          <td><%= link_to 'Edytuj', edit_complaint_path(complaint), class: "button small" %></td>
-          <td><%= link_to 'Usuń', complaint, method: :delete, data: { confirm: 'Jesteś pewien?' }, class: "button small alert"   %></td>
+        <td class="text-center"><%= link_to complaint_review.complaint.article.receipt.shop.name, complaint_review.complaint.article.receipt.shop %>          </td>
+        <td class="text-center"> <div class="examination_time_read_only" data-score= <%= complaint_review.examination_time %> ></div>
+          <td class="text-center"><div class="client_approach_read_only" data-score= <%= complaint_review.client_approach %> ></div>   </td>
+          <td class="text-center"><div class="satisfaction_read_only" data-score= <%= complaint_review.satisfaction %> > </div></td>
+          <td><%= link_to 'Szczegóły', complaint_review, class: "button small success" %></td>
+          <td><%= link_to 'Edytuj', edit_complaint_review_path(complaint_review), class: "button small" %></td>
+          <td><%= link_to 'Usuń', complaint_review, method: :delete, data: { confirm: 'Jesteś pewien?' }, class: "button small alert"   %></td>
           </tr>
   <% end %>
   </tbody>
 </table>
 
 <br>
-<%= link_to 'Nowa reklamacja', new_complaint_path, class: "button" %>
+<%= link_to 'Nowa ocena reklamacji', new_complaint_review_path, class: "button" %>
 

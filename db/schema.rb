@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116164110) do
+ActiveRecord::Schema.define(version: 20150119142432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20150116164110) do
     t.datetime "updated_at"
     t.integer  "receipt_id"
     t.date     "warranty_expires"
+    t.boolean  "already_complained", default: false
   end
 
   create_table "complaint_reviews", force: true do |t|
@@ -66,6 +67,7 @@ ActiveRecord::Schema.define(version: 20150116164110) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "article_id"
+    t.boolean  "already_reviewed",    default: false
   end
 
   create_table "receipts", force: true do |t|

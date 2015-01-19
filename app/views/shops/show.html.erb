@@ -2,6 +2,15 @@
 
 <h3>Przeglądanie sklepu</h3>
 
+<p >
+  <strong>Średnia ocena użytkowników:</strong>
+  <% if @count == 0 %>
+      <%= "brak ocen" %>
+  <% else %>
+    <div class="overall_rating_read_only" data-score= <%= @overall_rating %> ></div>
+<% end %>
+</p>
+
 <p>
   <strong>Nazwa:</strong>
   <%= @shop.name %>
@@ -43,4 +52,8 @@
   <strong>Telefon:</strong>
   <%= @shop.telephone %>
 </p>
+
+
+
+
 <%= link_to 'Powrót do Sklepów', shops_path, class: "button success" %> <%= link_to 'Powrót do Paragonów', receipts_path, class: "button" %>
