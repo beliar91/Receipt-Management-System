@@ -1,5 +1,60 @@
 <h1>Witaj w swoim panelu!</h1>
 
-<%= link_to "Przejrzyj sklepy", shops_path, class: "button" %> <%= link_to "Przejrzyj paragony", receipts_path, class: "button" %>
-</br>
-<%= link_to "Dodaj sklep", new_shop_path, class: "button success" %> <%= link_to "Dodaj paragony", new_receipt_path, class: "button success" %>
+<h2>Najlepiej oceniane sklepy przez użytkowników: </h2>
+<table>
+  <thead>
+  <tr>
+    <th class="text-center">Pozycja</th>
+    <th class="text-center">Nazwa</th>
+    <th class="text-center">Ulica</th>
+    <th class="text-center">Miasto</th>
+    <th class="text-center">Telefon</th>
+    <th class="text-center">Email</th>
+    <th class="text-center">Średnia ocena użytkowników</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+
+  <% @shops.each_with_index do |shop, index|  %>
+      <tr>
+        <td class="text-center"><%= (index+1).to_s %></td>
+        <td class="text-center"><%= link_to shop.name, shop %></td>
+        <td class="text-center"><%= shop.street %></td>
+        <td class="text-center"><%= shop.city %></td>
+        <td class="text-center"><%= shop.telephone %></td>
+        <td class="text-center"><%= shop.email %></td>
+        <td class="text-center"> <% if shop.overall_rating >0 %>
+              <div class="overall_rating_read_only" data-score= <%= shop.overall_rating %> ></div>
+
+          <% else %>
+
+              <%= 'brak ocen' %>
+
+          <% end %>
+            <% end %>
+        </td>
+      </tr>
+      </tbody>
+      </table>
+
+
+<h2>Twoje statystyki:</h2>
+
+<p>Liczba dodanych <%= link_to "sklepów:", shops_path %>
+  <%= current_user.shops.count %>
+</p>
+
+<p>Liczba dodanych <%= link_to "paragonów:", receipts_path %>
+<%= current_user.receipts.count %> <%= "(w tym " + current_user.articles.count.to_s + " artykuły)" %>
+</p>
+
+<p>Liczba utworzonych <%= link_to "reklamacji:", complaints_path %>
+  <%= current_user.complaints.count %>
+</p>
+
+<p>Liczba <%= link_to "ocenionych reklamacji:", complaint_reviews_path %>
+  <%= current_user.complaint_reviews.count %>
+</p>
+

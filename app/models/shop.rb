@@ -5,9 +5,10 @@ class Shop < ActiveRecord::Base
   include Elasticsearch::Model::Callbacks
 
 
-  validates :email, uniqueness: true
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create, message: "niepoprawny format" }, :allow_blank => true, :if => :email?
+  validates :email, uniqueness: true
   validates_presence_of :name
+  validates :name, uniqueness: true
   validates :telephone, length: { is: 15}
 
   geocoded_by :address

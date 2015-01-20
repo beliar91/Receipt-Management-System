@@ -9,6 +9,7 @@ pl:
               attributes:
                 name:
                   blank: nie może być pusta
+                  taken: jest już zajęta
                 email:
                   taken: jest już zajęty
             receipt:
@@ -32,6 +33,24 @@ pl:
               one: Artykuł
               other: Artykuły
             comment: Komentarze
+            complaint:
+              attributes:
+                article_id:
+                  blank: musi zostać wybrany
+                reason:
+                  blank: nie może być pusty
+            complaint_review:
+              one: Oceny Reklamacji
+              other: Ocen Reklamacji
+              attributes:
+                complaint_id:
+                  blank: musi zostać wybrana
+                examination_time:
+                  blank: musi zostać oceniony
+                client_approach:
+                  blank: musi zostać oceniony
+                satisfaction:
+                  blank: musi zostać ocenione
     attributes:
       shop:
         name: Nazwa sklepu
@@ -41,6 +60,7 @@ pl:
         user_id: Utworzył Użytkownik
         latitude: Szerokość geogr.
         longitude: Dlugość geogr.
+        overall_rating: Średnia ocena
         created_at: Utworzono
         updated_at: Zaktualizowano
       receipt:
@@ -56,11 +76,15 @@ pl:
         shop_id: Sklep
         user_id: Utworzył użytkownik
       complaint:
-        article_id: Wybierz artykuł do zareklamowania
-      user:
-        password: Hasło
+        article_id: Artykuł
+        reason: Powód reklamacji
       complaint_review:
         complaint_id: Reklamacja
+        examination_time: Czas rozpatrzenia
+        client_approach: Stosunek do klienta
+        satisfaction: Zadowolenie
+      user:
+        password: Hasło
   date:
     formats:
       default: "%d %B %Y"

@@ -2,7 +2,7 @@ class ShopsController < ApplicationController
   before_action :set_shop, only: [:show, :edit, :update, :destroy]
   before_action :check_auth, only: [:edit, :update, :destroy]
   before_action :check_login
-  before_action :calculate_rating, only: :show
+  before_action :calculate_ratings, only: [:index]
 
 
   #before_filter :authorize, :except => [:index, :show, :new, :create]
@@ -10,26 +10,38 @@ class ShopsController < ApplicationController
   respond_to :html, :xml, :json
 
 
-  def calculate_rating
+  def calculate_ratings
+
+    shops = Shop.all
+
+
+    shops.each do |shop|
 
     examination_time = ComplaintReview.joins(complaint: {article: {receipt: :shop}}).
-        where(shops: {id: @shop.id}).sum(:examination_time)
+        where(shops: {id: shop.id}).sum(:examination_time)
 
     client_approach = ComplaintReview.joins(complaint: {article: {receipt: :shop}}).
-        where(shops: {id: @shop.id}).sum(:client_approach)
+        where(shops: {id: shop.id}).sum(:client_approach)
 
     satisfaction = ComplaintReview.joins(complaint: {article: {receipt: :shop}}).
-        where(shops: {id: @shop.id}).sum(:satisfaction)
+        where(shops: {id: shop.id}).sum(:satisfaction)
 
     sum = examination_time+client_approach+satisfaction
 
-    count = ComplaintReview.
+    @count = ComplaintReview.
         joins(complaint: {article: {receipt: :shop}}).
-        where(shops: {id: @shop.id}).
+        where(shops: {id: shop.id}).
         count*3
 
-    @overall_rating = (sum.to_f/count).round(2)
+    @overall_rating = (sum.to_f/@count).round(2)
 
+    if (@count == 0)
+      shop.update_column(:overall_rating, 0)
+    else
+      shop.update_column(:overall_rating, @overall_rating)
+    end
+
+    end
 
   end
 
@@ -49,7 +61,7 @@ class ShopsController < ApplicationController
     if params[:query].present?
       @shops = Shop.__elasticsearch__.search(params[:query]).records
     else
-      @shops = Shop.all
+      @shops = Shop.all.order(overall_rating: :desc)
     end
     respond_with(@shops)
   end

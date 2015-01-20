@@ -4,10 +4,10 @@
 
 <p >
   <strong>Średnia ocena użytkowników:</strong>
-  <% if @count == 0 %>
+  <% if @shop.overall_rating == 0 %>
       <%= "brak ocen" %>
   <% else %>
-    <div class="overall_rating_read_only" data-score= <%= @overall_rating %> ></div>
+    <div class="overall_rating_read_only" data-score= <%= @shop.overall_rating %> ></div>
 <% end %>
 </p>
 
@@ -45,7 +45,11 @@
 
 <p>
   <strong>Email:</strong>
+  <% if @shop.email.blank? %>
+  <%= 'Nie podano' %>
+  <% else %>
   <%= @shop.email %>
+  <% end %>
 </p>
 
 <p>

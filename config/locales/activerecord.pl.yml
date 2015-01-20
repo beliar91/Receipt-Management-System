@@ -7,7 +7,11 @@ pl:
         other: '%{count} błędy zapobiegły przed zapisaniem tego %{resource}:'
         many: '%{count} błędy zapobiegły przed zapisaniem tego %{resource}:'
         few:  '%{count} błędy zapobiegły przed zapisaniem tego %{resource}:'
-
+      complaint:
+        one: '1 błąd zapobiegł przed zapisaniem tej %{resource}:'
+        other: '%{count} błędy zapobiegły przed zapisaniem tej %{resource}:'
+        many: '%{count} błędy zapobiegły przed zapisaniem tej %{resource}:'
+        few:  '%{count} błędy zapobiegły przed zapisaniem tej %{resource}:'
   models:
     shop:
       one: Sklepu
@@ -15,3 +19,10 @@ pl:
     receipt:
       one: Paragonu
       other: Paragonu
+    complaint:
+      one: Reklamacji
+      other: Reklamacji
+    complaint_review:
+      one: Oceny Reklamacji
+      other: Ocen Reklamacji
+

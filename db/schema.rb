@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119142432) do
+ActiveRecord::Schema.define(version: 20150119164950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150119142432) do
     t.integer  "receipt_id"
     t.date     "warranty_expires"
     t.boolean  "already_complained", default: false
+    t.integer  "user_id"
   end
 
   create_table "complaint_reviews", force: true do |t|
@@ -94,6 +95,7 @@ ActiveRecord::Schema.define(version: 20150119142432) do
     t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
+    t.float    "overall_rating"
   end
 
   create_table "static_pages", force: true do |t|

@@ -13,6 +13,8 @@ ActiveAdmin.register Shop do
     link_to shop.name, admin_shop_path(shop)
     end
 
+    column "Średnia użytkowników", :overall_rating, :class => 'center'
+
 
     column "Ulica", :street, :class => 'center'
 

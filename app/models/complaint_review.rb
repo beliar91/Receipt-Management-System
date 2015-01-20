@@ -5,6 +5,11 @@ class ComplaintReview < ActiveRecord::Base
 
   after_save :make_review
 
+  validates_presence_of :complaint_id
+  validates_presence_of :examination_time
+  validates_presence_of :client_approach
+  validates_presence_of :satisfaction
+
 
 def sum_review_ratings
  client_approach+examination_time+satisfaction

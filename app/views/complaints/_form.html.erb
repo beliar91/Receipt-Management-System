@@ -1,7 +1,7 @@
 <%= form_for @complaint  do |f| %>
     <% if @complaint.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@complaint.errors.count, "error") %> prohibited this complaint from being saved:</h2>
+          <h2><%= t('errors.messages.complaint', count: @complaint.errors.count, resource: t("models.complaint.one")) %> </h2>
 
           <ul>
             <% @complaint.errors.full_messages.each do |message| %>
@@ -20,8 +20,8 @@
     </div>
 
     <div class="field">
-      <div class="large-12 columns">
-        <%= f.collection_select :article_id, Article.where('already_complained=false'), :id, :name_with_brand, {:prompt => "Wybierz artykuł"}, { :class => 'textarea'}  %>
+      <div class="small-3 columns">
+        <%= f.collection_select :article_id, current_user.articles.where('already_complained=false'), :id, :name_with_brand, {:prompt => "Wybierz artykuł"} %>
       </div>
     </div>
 

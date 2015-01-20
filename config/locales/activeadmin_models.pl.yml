@@ -1,0 +1,34 @@
+pl:
+  activerecord:
+    models:
+      receipt:
+        one: Paragon
+        other: Paragony
+        many: Paragony
+        few: Paragonów
+      shop:
+        one: Sklep
+        other: Sklepy
+        many: Sklepy
+        few: Sklepów
+      article:
+        one: Artykuł
+        other: Artykuły
+        many: Artykuły
+        few: Artykułów
+      complaint:
+        one: Reklamacje
+        other: Reklamacji
+        many: Reklamacji
+        few: Reklamacji
+      complaint_review:
+        one: Ocena Reklamacji
+        other: Oceny Reklamacji
+        many: Oceny Reklamacji
+        few: Ocen Reklamacji
+      static_page:
+        one: Strona Statyczna
+        other: Strony Statyczne
+        many: Strony Statyczne
+        few: Stron Statycznych
+      comment: Komentarze

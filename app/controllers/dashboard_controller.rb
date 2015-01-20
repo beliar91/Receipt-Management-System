@@ -4,8 +4,9 @@ class DashboardController < ApplicationController
 
   def index
 
-  end
+    @shops = Shop.all.order(overall_rating: :desc).limit(5)
 
+  end
 
 
 end
