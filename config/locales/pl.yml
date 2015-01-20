@@ -52,6 +52,16 @@ pl:
                 satisfaction:
                   blank: musi zostać ocenione
     attributes:
+      article:
+        name: Nazwa
+        brand: Marka
+        warranty_time: Okres gwarancyjny
+        created_at: Utworzono
+        updated_at: Zaktualizowano
+        receipt_id: Paragon
+        warranty_expires: Gwarancja wygasa
+        already_complained: Czy złożono reklamacje?
+        user_id: Użytkownik
       shop:
         name: Nazwa sklepu
         street: Ulica
@@ -76,13 +86,22 @@ pl:
         shop_id: Sklep
         user_id: Utworzył użytkownik
       complaint:
+        reject_reason: Odrzucona z powodu
+        complaint_status_id: Status Reklamacji
+        created_at: Utworzono
+        updated_at: Zaktualizowano
         article_id: Artykuł
         reason: Powód reklamacji
+        already_reviewed: Czy już została oceniona?
+        user_id: Utworzył użytkownik
       complaint_review:
         complaint_id: Reklamacja
         examination_time: Czas rozpatrzenia
         client_approach: Stosunek do klienta
         satisfaction: Zadowolenie
+        comment: Komentarz
+        created_at: Utworzono
+        updated_at: Zaktualizowano
       user:
         password: Hasło
   date:

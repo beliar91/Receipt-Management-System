@@ -4,7 +4,7 @@ pl:
       receipt:
         one: Paragon
         other: Paragony
-        many: Paragony
+        many: Paragonów
         few: Paragonów
       shop:
         one: Sklep
@@ -14,17 +14,17 @@ pl:
       article:
         one: Artykuł
         other: Artykuły
-        many: Artykuły
+        many: Artykułów
         few: Artykułów
       complaint:
-        one: Reklamacje
-        other: Reklamacji
+        one: Reklamacja
+        other: Reklamacje
         many: Reklamacji
         few: Reklamacji
       complaint_review:
         one: Ocena Reklamacji
         other: Oceny Reklamacji
-        many: Oceny Reklamacji
+        many: Ocen Reklamacji
         few: Ocen Reklamacji
       static_page:
         one: Strona Statyczna

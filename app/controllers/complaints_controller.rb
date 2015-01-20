@@ -4,7 +4,9 @@ class ComplaintsController < ApplicationController
   before_action :check_auth, only: [:show, :edit, :update, :destroy]
   before_action :check_login
 
+
   respond_to :html, :xml, :json
+
 
   def check_auth
     user_id = current_user.id
@@ -56,7 +58,6 @@ class ComplaintsController < ApplicationController
 
     @complaint.complaint_status_id=1
     @complaint.save
-    flash[:notice] = "Twoja reklamacja została utworzona. Musi teraz zostać zaakceptowana przez administratora."
     respond_with(@complaint)
   end
 
@@ -73,7 +74,7 @@ class ComplaintsController < ApplicationController
   end
 
   def complaint_params
-    params.require(:complaint).permit(:reason, :user_id, :complaint_status_id, :article_id)
+    params.require(:complaint).permit(:reason, :user_id, :reject_reason, :already_reviewed, :complaint_status_id, :article_id)
   end
 
 

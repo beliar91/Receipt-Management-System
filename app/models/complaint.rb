@@ -1,6 +1,8 @@
+#encoding: utf-8
 class Complaint < ActiveRecord::Base
 
   after_save :make_complaint
+
 
   belongs_to :article
   belongs_to :user
@@ -15,6 +17,10 @@ class Complaint < ActiveRecord::Base
     if !self.article_id.nil?
     self.article.update_column(:already_complained,true)
     end
+  end
+
+  def display_name
+    self.reason
   end
 
 end

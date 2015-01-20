@@ -37,7 +37,6 @@ class ComplaintReviewsController < ApplicationController
     user_id = current_user.id
     @complaint_review.user_id = user_id
     @complaint_review.save
-    flash[:notice] = "Pomyslnie utworzono ocene reklamacji."
     respond_with(@complaint_review)
   end
 

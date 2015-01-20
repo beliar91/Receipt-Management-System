@@ -21,5 +21,9 @@ def make_review
 
 end
 
+  def display_name
+    self.comment
+  end
+
 
 end
