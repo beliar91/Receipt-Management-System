@@ -102,6 +102,11 @@ pl:
         comment: Komentarz
         created_at: Utworzono
         updated_at: Zaktualizowano
+      static_page:
+        title: Tytuł
+        content: Treść
+        created_at: Utworzono
+        updated_at: Zaktualizowano
       user:
         password: Hasło
   date:
