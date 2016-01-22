@@ -19,8 +19,8 @@ test:
 
 production:
   adapter: postgresql
-  username: ENV["POSTGRES_USERNAME"]
-  password: ENV["POSTGRES_PASSWORD"]
+  username: <%= ENV["POSTGRES_USERNAME"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
   database: Praca_inz_prod
   pool: 5
   timeout: 5000
