@@ -76,3 +76,14 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'faker'
+
+group :test do
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'factory_girl_rails'
+end
+
+
+group :development, :test do
+  gem 'rspec-rails'
+end
