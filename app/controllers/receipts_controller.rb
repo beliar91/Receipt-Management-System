@@ -20,7 +20,11 @@ class ReceiptsController < ApplicationController
 
   def index
 
-      @receipts = current_user.receipts
+      if(current_user.admin?)
+        @receipts = Receipt.all
+      else
+        @receipts = current_user.receipts
+      end
 
 
     respond_with(@receipts)

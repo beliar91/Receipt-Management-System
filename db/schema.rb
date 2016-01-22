@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20150119164950) do
 
   create_table "receipts", force: true do |t|
     t.date     "shopping_date"
+    t.string   "shop"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "shop_id"
