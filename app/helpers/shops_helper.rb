@@ -1,3 +1,5 @@
 module ShopsHelper
+
+
 end
 

@@ -22,7 +22,12 @@ class ComplaintReviewsController < ApplicationController
   end
 
   def index
-    @complaint_reviews = current_user.complaint_reviews
+    if(current_user.admin?)
+      @complaint_reviews = ComplaintReview.all
+    else
+      @complaint_reviews = current_user.complaint_reviews
+    end
+
 
     respond_with(@complaint_reviews)
   end

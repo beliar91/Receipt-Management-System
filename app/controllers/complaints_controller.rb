@@ -24,7 +24,12 @@ class ComplaintsController < ApplicationController
 
 
   def index
-    @complaints = current_user.complaints
+
+    if(current_user.admin?)
+      @complaints = Complaint.all
+    else
+      @complaints = current_user.complaints
+    end
 
 
     respond_with(@complaints)

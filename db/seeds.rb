@@ -1,6 +1,9 @@
 User.destroy_all
+Shop.destroy_all
 Receipt.destroy_all
+Article.destroy_all
 ComplaintStatus.destroy_all
+ComplaintReview.destroy_all
 
 50.times do
   user_password = Faker::Internet.password
@@ -10,7 +13,7 @@ ComplaintStatus.destroy_all
                   admin: [true, false].sample)
 
   #phone_number format: +99 999-999-999
-  s = Shop.find_or_create_by(name: Faker::Company.name,
+  s = Shop.create(name: Faker::Company.name,
               street: Faker::Address.street_name,
               city: Faker::Address.city,
               email: Faker::Internet.email,
@@ -24,29 +27,29 @@ ComplaintStatus.destroy_all
                 shop: s,
                 user: u,
                 file: Faker::Avatar.image,
-                name: Faker::Commerce.product_name
   )
 
-  a = Article.find_or_create_by(name: Faker::Commerce.product_name,
+  a = Article.create(name: Faker::Commerce.product_name,
                  brand: Faker::Commerce.department,
-                 warranty_time:rand(30..90),
-                 warranty_expires: Faker::Time.between(DateTime.now, DateTime.now+rand(30..90)),
+                 warranty_time:rand(6..24),
                  already_complained: [true,false].sample,
                  user: u,
                  receipt: r )
+
+  a.warranty_expires =  DateTime.now.advance(months: a.warranty_time)
 
   complaint_status = ComplaintStatus.create( [{name: 'Oczekuje na zaakceptowanie'}, {name: 'Odrzucona przez administratora'},
                            {name: 'W toku (zaakceptowana przez administratora)'},
                            {name: 'Uznana'},  {name: 'Nieuznana'}   ] )
 
 
-  c = Complaint.find_or_create_by(reason: Faker::Lorem.sentence,
+  c = Complaint.create(reason: Faker::Lorem.sentence,
                    user: u,
                    already_reviewed: [true,false].sample,
                    article: a,
                    complaint_status: complaint_status[rand(0..4)] )
 
-  ComplaintReview.find_or_create_by(user: u,
+  ComplaintReview.create(user: u,
                         comment: Faker::Lorem.sentence,
                         complaint: c,
                         examination_time: rand(1..5),

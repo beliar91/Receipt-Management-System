@@ -30,25 +30,25 @@
 
 <p> <strong>Postęp: </strong>
 
-    <% if @complaint.complaint_status_id==1 %>
+    <% if @complaint.complaint_status.name=="Oczekuje na zaakceptowanie" %>
 
     <div class="progress large-9 success round progresswidth"> <span class="meter" style="width: 20%"></span> </div>
 
     <% end %>
 
-    <% if @complaint.complaint_status_id==2 %>
+    <% if @complaint.complaint_status.name=="Odrzucona przez administratora" %>
     <div class="progress large-9 alert round progresswidth"> <span class="meter" style="width: 100%"></span> </div>
     <% end %>
 
-    <% if @complaint.complaint_status_id==3 %>
+    <% if @complaint.complaint_status.name=="W toku (zaakceptowana przez administratora)" %>
     <div class="progress large-9 success round progresswidth"> <span class="meter" style="width: 50%"></span> </div>
     <% end %>
 
-    <% if @complaint.complaint_status_id==4 %>
+    <% if @complaint.complaint_status.name=="Uznana" %>
     <div class="progress large-9 success round progresswidth"> <span class="meter" style="width: 100%"></span> </div>
     <% end %>
 
-    <% if @complaint.complaint_status_id==5 %>
+    <% if @complaint.complaint_status.name=="Nieuznana" %>
     <div class="progress large-9 alert round progresswidth"> <span class="meter" style="width: 100%"></span> </div>
     <% end %>
 
