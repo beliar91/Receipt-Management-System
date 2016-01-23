@@ -3,7 +3,7 @@
 ActiveAdmin.register Complaint do
 
   scope :wymagają_zaakceptowania do |complaints|
-      complaints.where(:complaint_status_id=> 1)
+      complaints.where(:complaint_status_id => 1)
   end
 
   scope :odrzucone do |complaints|
