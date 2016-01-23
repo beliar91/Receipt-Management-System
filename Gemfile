@@ -76,6 +76,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'faker'
+gem 'rails_12factor', group: :production
 
 group :test do
   gem 'capybara'
