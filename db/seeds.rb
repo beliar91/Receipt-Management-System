@@ -1,7 +1,8 @@
 User.destroy_all
 Shop.destroy_all
-Receipt.destroy_all
 Article.destroy_all
+Receipt.destroy_all
+Complaint.destroy_all
 ComplaintStatus.destroy_all
 ComplaintReview.destroy_all
 
@@ -24,6 +25,7 @@ ComplaintReview.destroy_all
               overall_rating: rand(1.0..5))
 
   r = Receipt.create(shopping_date: Faker::Time.between(DateTime.now - 30, DateTime.now),
+                name: Faker::Commerce.product_name,
                 shop: s,
                 user: u,
                 file: Faker::Avatar.image,
