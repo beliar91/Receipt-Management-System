@@ -26,9 +26,9 @@ a) Install <a href="https://gorails.com/setup/ubuntu/15.10#postgresql">PostgreSQ
 b) Edit the file located in config/database.yml to match your own credentials<br />
 c) Run the following command:<br />
 
-```console
-rake db:create
-```
+    ```console
+    rake db:create
+    ```
 
 2. If you want to use SQLite on your local machine:<br />
 a) Edit your config/database.yml file to use SQLite so it looks like <a href="https://gist.github.com/danopia/940155">this</a><br />
