@@ -1,10 +1,10 @@
-Welcome to the Receipt Management System App<br />
+# Welcome to the Receipt Management System App<br />
 by Aleksander Gosk
 
 ## About the Project
 
 Receipt Management System is an app made for the <a href="http://www.pja.edu.pl/">Polish and Japanese Academy of Computer Technologies</a> as part of the Engineering thesis.<br />
-The main concept of the application is to enable making complaints (based on a receipt you get from a shop) by the users about the products they bought in a particular shop, as well as giving feedback about the complaint process.
+<br />The main concept of the application is to enable making complaints (based on a receipt you get from a shop) by the users about the products they bought in a particular shop, as well as giving feedback about the complaint process.
 
 ## Getting started
 
@@ -54,7 +54,7 @@ rake db:seed
 
 1. How can I get into the admin panel?<br />
 a) Make sure the user you are currently logged in has the admin attribute set to true.<br />
-b) Enter <a href="localhost:3000/admin">The Admin panel</a><br />
+b) Enter <a href="http://localhost:3000/admin">The Admin panel</a><br />
 
 2. Why can't I make any complaint reviews?<br />
 Before making a complaint review, an admin user must accept the particular review in the admin panel.
