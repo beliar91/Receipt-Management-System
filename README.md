@@ -1,9 +1,9 @@
-== Welcome to the Receipt Management System App
+Welcome to the Receipt Management System App__
 by Aleksander Gosk
 
 ## About the Project
 
-Receipt Management System is an app made for the <a href="http://www.pja.edu.pl/">Polish and Japanese Academy of Computer Technologies</a> as part of the Engineering thesis.
+Receipt Management System is an app made for the <a href="http://www.pja.edu.pl/">Polish and Japanese Academy of Computer Technologies</a> as part of the Engineering thesis.__
 The main concept of the application is to enable making complaints (based on a receipt you get from a shop) by the users about the products they bought in a particular shop, as well as giving feedback about the complaint process.
 
 ## Getting started
@@ -21,18 +21,18 @@ Run the bundle install command to install all the gems on your local machine.
 
 Creating the database:
 
-1. If you want to use PostgreSQL on your local machine:
-a) Install <a href="https://gorails.com/setup/ubuntu/15.10#postgresql">PostgreSQL</a>
-b) Edit the file located in config/database.yml to match your own credentials
-c) Run the following command:
+1. If you want to use PostgreSQL on your local machine:__
+a) Install <a href="https://gorails.com/setup/ubuntu/15.10#postgresql">PostgreSQL</a>__
+b) Edit the file located in config/database.yml to match your own credentials__
+c) Run the following command:__
 
 ```console
 rake db:create
 ```
 
-2. If you want to use SQLite on your local machine:
-a) Edit your config/database.yml file to use SQLite so it looks like <a href="https://gist.github.com/danopia/940155">this</a>
-b) Edit your Gemfile so it looks like this:
+2. If you want to use SQLite on your local machine:__
+a) Edit your config/database.yml file to use SQLite so it looks like <a href="https://gist.github.com/danopia/940155">this</a>__
+b) Edit your Gemfile so it looks like this:__
 ```console
 gem 'sqlite3'
 gem 'pg', group: :production
@@ -52,20 +52,20 @@ rake db:seed
 
 ## FAQ
 
-1. How can I get into the admin panel?
-a) Make sure the user you are currently logged in has the admin attribute set to true.
-b) Enter <a href="localhost:3000/admin">The Admin panel</a>
+1. How can I get into the admin panel?__
+a) Make sure the user you are currently logged in has the admin attribute set to true.__
+b) Enter <a href="localhost:3000/admin">The Admin panel</a>__
 
-2. Why can't I make any complaint reviews?
+2. Why can't I make any complaint reviews?__
 Before making a complaint review, an admin user must accept the particular review in the admin panel.
 
 
-Live demo:
+## Live demo:
 
 <a href="http://receipt-managing-system.herokuapp.com/">Receipt Management System</a>
 
 ## What's next?
 
--Add test coverage (using Rspec/Capybara/FactoryGirl)
--Add I18N support
--Add facebook,twitter, google+ registration/signing up
+-Add test coverage (using Rspec/Capybara/FactoryGirl)__
+-Add I18N support__
+-Add facebook,twitter, google+ registration/signing up__
