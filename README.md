@@ -37,6 +37,10 @@ b) Edit your Gemfile so it looks like this:<br />
 gem 'sqlite3'
 gem 'pg', group: :production
 ```
+c) Run the following command:
+```console
+bundle install
+```
 
 After creating the database, run the following command:
 
