@@ -33,14 +33,14 @@ c) Run the following command:<br />
 2. If you want to use SQLite on your local machine:<br />
 a) Edit your config/database.yml file to use SQLite so it looks like <a href="https://gist.github.com/danopia/940155">this</a><br />
 b) Edit your Gemfile so it looks like this:<br />
-```console
-gem 'sqlite3'
-gem 'pg', group: :production
-```
+    ```console
+    gem 'sqlite3'
+    gem 'pg', group: :production
+    ```
 c) Run the following command:
-```console
-bundle install
-```
+    ```console
+    bundle install
+    ```
 
 After creating the database, run the following command:
 
